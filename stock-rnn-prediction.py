@@ -206,8 +206,7 @@ def main():
     model.to(device)
 
     if is_distributed():
-        Distributor = nn.parallel.DistributedDataParallel if use_cuda \
-            else nn.parallel.DistributedDataParallelCPU
+        Distributor = nn.parallel.DistributedDataParallel
         model = Distributor(model)
 
     optimizer = optim.Adam(model.parameters(), lr=args.lr)
