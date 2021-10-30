@@ -191,8 +191,6 @@ def main():
         print("Using distributed PyTorch with {} backend".format(args.backend))
         dist.init_process_group(backend=args.backend)
 
-    kwargs = {"num_workers": 1, "pin_memory": True} if use_cuda else {}
-
     X_train, X_test, y_train, y_test, target_scaler = get_data(name=args.company_name)
     X_train, y_train = process_data(X_train, y_train, args.lag)
     X_test, y_test = process_data(X_test, y_test, args.lag)
