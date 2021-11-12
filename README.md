@@ -14,5 +14,5 @@ In this project, I trained an RNN model to predict Apple stock price using histo
   - On Kubernetes, create the pytorch-job by running `kubectl apply -f pytorch-job.yaml -n <namespace>`.
   - The job can be monitored by checking the logs of the master pod -
     - Be sure to look for the name of the pod with `kubectl get pods -n <namespace>`.
-    - In my case, running 'kubectl logs kubectl logs pytorch-stock-rnn-master-0 -n kubeflow' returns the logging info that looks like below:
+    - In my case, running `kubectl logs pytorch-stock-rnn-master-0 -n kubeflow` returns the logging info that looks like below:
     - ![pytorch-job-log](./logs/pytorch-job-log.png)
